@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border-collapse: collapse;  /* 셀 간격 제거 */
+        }
+        td, th{
+            border:1px solid;
+            cellPadding:0px;
+        }
+    </style>
+</head>
+<body>
+<h1>Hello Spring</h1>
+<p>회원목록</p>
+<div class="container">
+<table>
+    <thead>
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                이름
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="member:${members}">
+            <td th:text="${member.id}"></td>
+            <td th:text="${member.name}"></td>
+        </tr>
+    </tbody>
+</table>
+
+</div>
+</body>
+</html>
